@@ -17,7 +17,7 @@ export default function Home() {
 	}, []);
 
 	async function loadNFTs() {
-		const provider = new ethers.providers.JsonRpcProvider();
+		const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.g.alchemy.com/v2/M3BZBEFdM0YpHsqvXICBDH8GwqSHxpnS");
 		const NFTContract = new ethers.Contract(nftAddress, NFT.abi, provider);
 		const NFTMartketplaceContract = new ethers.Contract(nftMarketplaceAddress, NFTMarketplace.abi, provider);
 		const data = await NFTMartketplaceContract.fetchUnsoldNFTs();
