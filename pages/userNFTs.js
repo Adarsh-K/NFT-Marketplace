@@ -9,7 +9,7 @@ import {
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json"
 import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json"
 
-export default function userNFTs() {
+export default function UserNFTs() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState('not-loaded');
   useEffect(() => {

@@ -72,24 +72,24 @@ export default function ListNFT() {
       {fileUrl ? (
         <img className="rounded m-4 w-1/2 h-full ml-60" src={fileUrl} />
       ) : (
-        <div class="m-4 w-1/2 h-full ml-60">
-          <div class="flex justify-center h-2/3">
-            <label class="flex flex-col w-full h-full border-4 justify-center border-dashed hover:bg-gray-100 hover:border-gray-300">
-                <div class="flex flex-col items-center justify-center pt-7">
+        <div className="m-4 w-1/2 h-full ml-60">
+          <div className="flex justify-center h-2/3">
+            <label className="flex flex-col w-full h-full border-4 justify-center border-dashed hover:bg-gray-100 hover:border-gray-300">
+                <div className="flex flex-col items-center justify-center pt-7">
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                        className="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
                         fill="currentColor">
-                        <path fill-rule="evenodd"
+                        <path fillRule="evenodd"
                             d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                            clip-rule="evenodd" />
+                            clipRule="evenodd" />
                     </svg>
-                    <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                    <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
                         Select a photo</p>
                 </div>
-                <input type="file" name="Asset" class="opacity-0" onChange={ onChange } />
+                <input type="file" name="Asset" className="opacity-0" onChange={ onChange } />
             </label>
           </div>
-          <label class="block text-center mt-4 text-gray-500">Upload
+          <label className="block text-center mt-4 text-gray-500">Upload
               Image (jpg, png, svg, jpeg, gif)</label>
         </div>
       )
