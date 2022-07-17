@@ -4,6 +4,7 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "hardhat/console.sol";
 
 contract NFTMarketplace is ReentrancyGuard {
     using Counters for Counters.Counter;
@@ -100,6 +101,7 @@ contract NFTMarketplace is ReentrancyGuard {
 
     function fetchUnsoldNFTs() public view returns (nft[] memory) {
         uint256 numUnsoldNFTs = _nftIds.current() - _nftsSold.current();
+        console.log("numUnsoldNFTs- %d", numUnsoldNFTs);
         uint256 currIndex = 0;
         nft[] memory unsoldNFTs = new nft[](numUnsoldNFTs);
 
@@ -107,6 +109,7 @@ contract NFTMarketplace is ReentrancyGuard {
             if (!idToNft[id].isSold) {
                 nft memory currNFT = idToNft[id];
                 unsoldNFTs[currIndex++] = currNFT;
+                console.log(currNFT.nftId);
             }
         }
 
