@@ -1,15 +1,7 @@
-# Basic Sample Hardhat Project
+# See app in action: https://nft-marketplace-nine-pink.vercel.app
+# Full stack NFT Marketplace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+I've developed a fullstack NFT Marketplace using Solidity, Hardhat, Ethers.js & React.
+Users can login via Metamask then **mint** or **buy** NFTs in exchange of a fee to the marketplace. 
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+The NFT images are stored using IPFS & the smart contracts are delpoyed on Polygon.
