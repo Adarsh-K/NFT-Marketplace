@@ -68,7 +68,7 @@ export default function ListNFT() {
 	}
 
 	return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 py-20">
       {fileUrl ? (
         <img className="rounded m-4 w-1/2 h-full ml-60" src={fileUrl} />
       ) : (
