@@ -8,6 +8,7 @@ import {
 } from '../config'
 import NFT from "../utils/NFT.json"
 import NFTMarketplace from "../utils/NFTMarketplace.json"
+import NFTCards from './nftCards'
 
 export default function UserNFTs() {
   const [nfts, setNfts] = useState([]);
@@ -47,19 +48,12 @@ export default function UserNFTs() {
   if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">No NFTs owned</h1>)
   
   return (
-    <div className="flex justify-center">
-      <div className="p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-          {
-            nfts.map((nft, i) => (
-              <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img src={nft.image} className="rounded" />
-                <div className="p-4 bg-black">
-                  <p className="text-2xl font-bold text-white">Price - {nft.price} MATIC</p>
-                </div>
-              </div>
-            ))
-          }
+    <div className="flex w-full justify-center items-center 2xl:px-20">
+      <div className="flex flex-col md:p-12 py-12 px-4">
+        <div className="flex flex-wrap justify-center items-center mt-10">
+          {nfts.reverse().map((nft, i) => (
+            <NFTCards key={i} nft={nft} hasButton={false} />
+          ))}
         </div>
       </div>
     </div>
