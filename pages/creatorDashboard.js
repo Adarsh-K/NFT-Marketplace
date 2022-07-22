@@ -8,7 +8,7 @@ import {
 } from '../config'
 import NFT from "../utils/NFT.json"
 import NFTMarketplace from "../utils/NFTMarketplace.json"
-import NFTCards from './nftCards'
+import NFTCards from '../components/nftCards'
 
 export default function CreatorDashboard() {
   const [nfts, setNfts] = useState([]);

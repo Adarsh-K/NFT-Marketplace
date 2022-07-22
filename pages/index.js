@@ -8,7 +8,7 @@ import {
 } from '../config'
 import NFT from "../utils/NFT.json"
 import NFTMarketplace from "../utils/NFTMarketplace.json"
-import NFTCards from './nftCards'
+import NFTCards from '../components/nftCards'
 import { useRouter } from 'next/router'
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
 		const price = ethers.utils.parseUnits(nft.price.toString(), 'ether');
 		const transaction = await NFTMartketplaceContract.buyNFT(nftAddress, nft.nftId, { value: price });
 		await transaction.wait();
-    
+
 		router.push('/userNFTs');
 	}
 	
