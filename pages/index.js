@@ -9,8 +9,10 @@ import {
 import NFT from "../utils/NFT.json"
 import NFTMarketplace from "../utils/NFTMarketplace.json"
 import NFTCards from './nftCards'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+	const router = useRouter();
 	const [nfts, setNfts] = useState([]);
 	const [loadingState, setLoadingState] = useState('not-loaded');
 	useEffect(() => {
@@ -53,7 +55,8 @@ export default function Home() {
 		const price = ethers.utils.parseUnits(nft.price.toString(), 'ether');
 		const transaction = await NFTMartketplaceContract.buyNFT(nftAddress, nft.nftId, { value: price });
 		await transaction.wait();
-		loadNFTs();
+    
+		router.push('/userNFTs');
 	}
 	
 	if (loadingState === 'loaded' && !nfts.length) return (
@@ -66,7 +69,7 @@ export default function Home() {
         <h2 className="text-4xl text-center text-white pt-6">Buy NFTs</h2>
         <div className="flex flex-wrap justify-center items-center mt-10">
           {nfts.reverse().map((nft, i) => (
-            <NFTCards key={i} nft={nft} hasButton={true}/>
+            <NFTCards key={i} nft={nft} hasButton={true} buyNFT={buyNFT}/>
           ))}
         </div>
       </div>

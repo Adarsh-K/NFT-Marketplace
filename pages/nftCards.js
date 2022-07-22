@@ -1,4 +1,4 @@
-export default function NFTCards({ nft, hasButton, }) {
+export default function NFTCards({ nft, hasButton, buyNFT}) {
   return(
     <div className={`bg-${hasButton ? '[#181918]' : 'transparent'} m-4 flex flex-1
       2xl:min-w-[450px]
