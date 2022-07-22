@@ -49,7 +49,8 @@ export default function UserNFTs() {
   
   return (
     <div className="flex w-full justify-center items-center 2xl:px-20">
-      <div className="flex flex-col md:p-12 py-12 px-4">
+      <div className="flex flex-col md: py-4 px-4">
+        <h2 className="text-4xl text-center text-white pt-2">Your NFTs</h2>
         <div className="flex flex-wrap justify-center items-center mt-10">
           {nfts.reverse().map((nft, i) => (
             <NFTCards key={i} nft={nft} hasButton={false} />

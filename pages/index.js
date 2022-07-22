@@ -63,6 +63,7 @@ export default function Home() {
 	return (
     <div className="flex w-full justify-center items-center 2xl:px-20">
       <div className="flex flex-col md: px-4">
+        <h2 className="text-4xl text-center text-white pt-6">Buy NFTs</h2>
         <div className="flex flex-wrap justify-center items-center mt-10">
           {nfts.reverse().map((nft, i) => (
             <NFTCards key={i} nft={nft} hasButton={true}/>
