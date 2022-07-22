@@ -50,14 +50,18 @@ export default function CreatorDashboard() {
   if (loadingState === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">No NFTS listed</h1>);
   return (
     <div>
-      <div className="p-4">
-        <h2 className="text-4xl text-center text-white py-2">NFTs Listed</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-          {
-            nfts.map((nft, i) => (
-            <NFTCards key={i} nft={nft} hasButton={false} buyNFT={() => {}}/>
-            ))
-          }
+      {/* <div className="p-4"> */}
+      <div className="flex w-full justify-center items-center 2xl:px-20">
+        <div className="flex flex-col md: py-4 px-4">
+          <h2 className="text-4xl text-center text-white py-2">NFTs Listed</h2>
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4"> */}
+          <div className="flex flex-wrap justify-center items-center mt-10">
+            {
+              nfts.map((nft, i) => (
+              <NFTCards key={i} nft={nft} hasButton={false} buyNFT={() => {}}/>
+              ))
+            }
+          </div>
         </div>
       </div>
         <div className="px-4">
